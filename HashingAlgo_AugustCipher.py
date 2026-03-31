@@ -1,3 +1,6 @@
+#Cryptography Algo with August Cipher and hash function
+
+#Allowed set of characters
 charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,-_@"
 N=len(charset)
 def hash_function(message):
@@ -20,11 +23,11 @@ def final_encryption(message):
         else:
             n-=1                            #Length of msg reduces when ignoring characters not in charset
     hash_value = hash_function(text)
-    combined = text + str(hash_value)
-    encrypted_text=encrypt(combined)
+    combined = text + str(hash_value)       #Combine message with hashed value
+    encrypted_text=encrypt(combined)        #Encrypt the combined text
     return encrypted_text
 
-def encrypt(text):
+def encrypt(text):  #August Cipher
     encrypted=""
     for c in text:
         new_index = (charset.index(c) + 1) % N
@@ -60,8 +63,8 @@ while True:
         print(decryptedtext)
     
     elif (choice=="3"):
-        decryptedmsg=decryptedtext[:n]
-        decryptedhash=decryptedtext[n:]
+        decryptedmsg=decryptedtext[:n]          #Separate message from combined text
+        decryptedhash=decryptedtext[n:]         #Separate hashed value from combined text
         if (str(hash_function(decryptedmsg))==decryptedhash):
             print("Authenticated.")
         else:

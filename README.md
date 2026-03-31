@@ -50,10 +50,10 @@ Menu-driven interface
 
 ## Menu Options
 
-Encrypt Message
-Decrypt Message
-Authenticate
-Exit
+- Encrypt Message
+- Decrypt Message
+- Authenticate
+- Exit
 
 ---
 
