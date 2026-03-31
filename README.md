@@ -14,12 +14,12 @@ A message is first filtered using a defined character set, hashed using a custom
 
 ## Features
 
-Custom non-cryptographic hash function
-Message filtering using defined character set
-August Cipher
-Decryption support
-Message authentication
-Menu-driven interface
+- Custom non-cryptographic hash function
+- Message filtering using defined character set
+- August Cipher
+- Decryption support
+- Message authentication
+- Menu-driven interface
 
 ---
 
@@ -59,10 +59,10 @@ Menu-driven interface
 
 ## Example
 
-Input Message: Hello
-Encrypted Output: Ifmmp491122361
-Decrypted Output: Hello380011250
-Authentication: Valid
+- Input Message: Hello
+- Encrypted Output: Ifmmp491122361
+- Decrypted Output: Hello380011250
+- Authentication: Valid
 
 ---
 
@@ -72,10 +72,10 @@ This project uses a custom non-cryptographic hash function inspired by the FNV (
 
 The hash is initialized with a constant value (2166136261). For each character in the input message, the following operations are performed:
 
-XOR the current hash value with the ASCII value of the character
-Multiply the result by a large prime number (16777619)
-Apply a bitwise right shift and XOR operation for additional mixing
-Take modulo (10^9 + 7) to keep the value within a fixed range
+- XOR the current hash value with the ASCII value of the character.
+- Multiply the result by a large prime number (16777619).
+- Apply a bitwise right shift and XOR operation for additional mixing.
+- Take modulo (10^9 + 7) to keep the value within a fixed range.
 
 This process ensures that small changes in the input message produce significantly different hash values.
 
