@@ -12,17 +12,6 @@ A message is first filtered using a defined character set, hashed using a custom
 
 ---
 
-## Features
-
-- Custom non-cryptographic hash function
-- Message filtering using defined character set
-- August Cipher
-- Decryption support
-- Message authentication
-- Menu-driven interface
-
----
-
 ## How It Works
 
 1. Input message is filtered to include only allowed characters
@@ -120,3 +109,7 @@ Where:
 - n = size of the character set
 
 ---
+
+## WorkFlow of the Script
+
+Message Input → Message Filtering → Hash Generation → Concatenate (Message+Hash) → Encryption → Decryption → Split (Message,Hash) → Recompute Hash → Compare Hashes → Authenticated/Not Authenticated
