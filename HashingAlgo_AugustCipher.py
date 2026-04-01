@@ -23,6 +23,7 @@ def final_encryption(message):
         else:
             n-=1                            #Length of msg reduces when ignoring characters not in charset
     hash_value = hash_function(text)
+    print("Hash Value: ", hash_value)
     combined = text + str(hash_value)       #Combine message with hashed value
     encrypted_text=encrypt(combined)        #Encrypt the combined text
     return encrypted_text
@@ -60,11 +61,14 @@ while True:
     
     elif (choice=="2"):
         decryptedtext=decrypt(encrypted_msg)
-        print(decryptedtext)
-    
-    elif (choice=="3"):
         decryptedmsg=decryptedtext[:n]          #Separate message from combined text
         decryptedhash=decryptedtext[n:]         #Separate hashed value from combined text
+        print("Decrypted text: ",decryptedtext)
+        print("Decrypted message: ",decryptedmsg)
+        print("Decrypted Hash: ",decryptedhash)
+    
+    elif (choice=="3"):
+        
         if (str(hash_function(decryptedmsg))==decryptedhash):
             print("Authenticated.")
         else:

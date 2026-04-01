@@ -59,14 +59,25 @@ A message is first filtered using a defined character set, hashed using a custom
 
 ## Example
 
-- Input Message: Hello
-- Encrypted Output: Ifmmp491122361
-- Decrypted Output: Hello380011250
-- Authentication: Valid
+### Output 1
+
+- Input Message: Hi, hello and welcome
+- Hash Value: 901571682
+- Encrypted Output: Ij-.ifmmp.boe.xfmdpnf 12682793
+- Decrypted Output: Hi, hello and welcome901571682
+- Authentication: Authenticated.
+
+### Output 2
+
+- Input Message: My name is Hari
+- Hash Value: 657981888
+- Encrypted Output: Nz.obnf.jt.Ibsj768 92999
+- Decrypted Output: My name is Hari657981888
+- Authentication: Authenticated.
 
 ---
 
-## Custom Hash Function:
+## Custom Hash Function
 
 This project uses a custom non-cryptographic hash function inspired by the FNV (Fowler–Noll–Vo) hashing technique.
 
@@ -80,3 +91,32 @@ The hash is initialized with a constant value (2166136261). For each character i
 This process ensures that small changes in the input message produce significantly different hash values.
 
 Note: Produces integer hash values in the range 0 to 1,000,000,006
+
+---
+
+## August Cipher
+
+The August Cipher is a substitution cipher where each character is shifted by exactly one position in the defined character set.
+
+### Working Principle:
+
+- Each character in the message is assigned an index based on its position in the character set.
+- A fixed shift value (key=1) is used to transform the message.
+- During encryption, each character is shifted forward by the key value, 1.
+- During decryption, characters are shifted backward by the same key.
+
+### Formula:
+
+**Encryption:**
+E(x) = (x + k) mod n
+
+**Decryption:**
+D(x) = (x - k) mod n
+
+Where:
+
+- x = index of the character
+- k = shift key
+- n = size of the character set
+
+---
