@@ -113,3 +113,5 @@ Where:
 ## WorkFlow of the Script
 
 Message Input → Message Filtering → Hash Generation → Concatenate (Message+Hash) → Encryption → Decryption → Split (Message,Hash) → Recompute Hash → Compare Hashes → Authenticated/Not Authenticated
+
+---
